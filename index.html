@@ -1,0 +1,673 @@
+<?php
+
+require_once './assets/lib/Application.php';
+
+?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Color Chooser</title>
+        
+        <link type="text/css" rel="stylesheet" href="assets/css/typography.css" />
+        <link type="text/css" rel="stylesheet" href="assets/css/styles.css" />
+        <link type="text/css" rel="stylesheet" href="assets/css/theme-light.css" />
+        
+        <script type="text/javascript" src="assets/js/CommonTools.js"></script>
+        <script type="text/javascript" src="assets/js/HtmlElements.js"></script>
+        <script type="text/javascript" src="assets/js/Drag.js"></script>
+        <script type="text/javascript" src="assets/js/Color.js"></script>
+        <script type="text/javascript" src="assets/js/NumberInput.js"></script>
+        <script type="text/javascript" src="assets/js/TextBox.js"></script>
+        <script type="text/javascript" src="assets/js/ColorChooserInput.js"></script>
+
+        <style type="text/css">
+            body {
+                padding: 1em;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <section>
+                <header>
+                    <h1 id="example-text">Color Chooser</h1>
+                </header>
+
+                <h2>Demo</h2>
+
+                <!-- Color Chooser Start -->
+                <div id='my-color-chooser' class="ssm-color-chooser ssm-seal-control" data-isDisabled="false">
+                    <input type="color" value="#000000" />
+                    <svg
+                            xmlns:dc="http://purl.org/dc/elements/1.1/"
+                            xmlns:cc="http://creativecommons.org/ns#"
+                            xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                            xmlns:svg="http://www.w3.org/2000/svg"
+                            xmlns="http://www.w3.org/2000/svg"
+                            version="1.1"
+                            viewBox="0 0 5.5 1.25"
+                            height="1.25em"
+                            width="5.5em">
+                        <g
+                                transform="translate(0,0)">
+                            <rect
+                                    ry="0.25"
+                                    y="0"
+                                    x="0"
+                                    height="1.25"
+                                    width="5.5"
+                                    fill="#000000"
+                                    stroke-width="0.1"
+                                    stroke="#b6b6b3" />
+                        </g>
+                    </svg>
+
+                    <div class="ssm-color-chooser-dialog" data-isShow="false">
+                        <div class="ssm-color-palette">
+                            <div>
+                                <label  class="ssm-label ssm-status-label-element">
+                                    <span></span>
+                                    <span>Stanard Colors</span>
+                                </label>
+
+                                <div>
+                                    <span class="ssm-color-chooser-palette-item" style="background: #e78e89;" data-isChecked="false" data-color="#e78e89">
+                                        <span></span>
+                                    </span>
+                                    <span class="ssm-color-chooser-palette-item" style="background: #f7a575;" data-isChecked="false" data-color="#f7a575">
+                                        <span></span>
+                                    </span>
+                                    <span class="ssm-color-chooser-palette-item" style="background: #fde8ab;" data-isChecked="false" data-color="#fde8ab">
+                                        <span></span>
+                                    </span>
+                                    <span class="ssm-color-chooser-palette-item" style="background: #ccdf7b;" data-isChecked="false" data-color="#ccdf7b">
+                                        <span></span>
+                                    </span>
+                                    <span class="ssm-color-chooser-palette-item" style="background: #8ecaf2;" data-isChecked="false" data-color="#8ecaf2">
+                                        <span></span>
+                                    </span>
+                                    <span class="ssm-color-chooser-palette-item" style="background: #d997d8;" data-isChecked="false" data-color="#d997d8">
+                                        <span></span>
+                                    </span>
+                                    <span class="ssm-color-chooser-palette-item" style="background: #da4d45;" data-isChecked="false" data-color="#da4d45">
+                                        <span></span>
+                                    </span>
+                                    <span class="ssm-color-chooser-palette-item" style="background: #f37329;" data-isChecked="false" data-color="#f37329">
+                                        <span></span>
+                                    </span>
+                                    <span class="ssm-color-chooser-palette-item" style="background: #fbd25d;" data-isChecked="false" data-color="#fbd25d">
+                                        <span></span>
+                                    </span>
+                                    <span class="ssm-color-chooser-palette-item" style="background: #b3cf3b;" data-isChecked="false" data-color="#b3cf3b">
+                                        <span></span>
+                                    </span>
+                                    <span class="ssm-color-chooser-palette-item" style="background: #47a8e9;" data-isChecked="false" data-color="#47a8e9">
+                                        <span></span>
+                                    </span>
+                                    <span class="ssm-color-chooser-palette-item" style="background: #c35cc2;" data-isChecked="false" data-color="#c35cc2">
+                                        <span></span>
+                                    </span>
+                                    <span class="ssm-color-chooser-palette-item" style="background: #ad2a23;" data-isChecked="false" data-color="#ad2a23">
+                                        <span></span>
+                                    </span>
+                                    <span class="ssm-color-chooser-palette-item" style="background: #c14e0b;" data-isChecked="false" data-color="#c14e0b">
+                                        <span></span>
+                                    </span>
+                                    <span class="ssm-color-chooser-palette-item" style="background: #f9bc0f;" data-isChecked="false" data-color="#f9bc0f">
+                                        <span></span>
+                                    </span>
+                                    <span class="ssm-color-chooser-palette-item" style="background: #809525;" data-isChecked="false" data-color="#809525">
+                                        <span></span>
+                                    </span>
+                                    <span class="ssm-color-chooser-palette-item" style="background: #1881c8;" data-isChecked="false" data-color="#1881c8">
+                                        <span></span>
+                                    </span>
+                                    <span class="ssm-color-chooser-palette-item" style="background: #983897;" data-isChecked="false" data-color="#983897">
+                                        <span></span>
+                                    </span>
+                                </div>
+
+                                <div></div>
+
+                                <div>
+                                    <span class="ssm-color-chooser-palette-item" style="background: #000000;" data-isChecked="false" data-color="#000000">
+                                        <span></span>
+                                    </span>
+                                    <span class="ssm-color-chooser-palette-item" style="background: #333333;" data-isChecked="false" data-color="#333333">
+                                        <span></span>
+                                    </span>
+                                    <span class="ssm-color-chooser-palette-item" style="background: #666666;" data-isChecked="false" data-color="#666666">
+                                        <span></span>
+                                    </span>
+                                    <span class="ssm-color-chooser-palette-item" style="background: #999999;" data-isChecked="false" data-color="#999999">
+                                        <span></span>
+                                    </span>
+                                    <span class="ssm-color-chooser-palette-item" style="background: #cccccc;" data-isChecked="false" data-color="#cccccc">
+                                        <span></span>
+                                    </span>
+                                    <span class="ssm-color-chooser-palette-item" style="background: #ffffff;" data-isChecked="false" data-color="#ffffff">
+                                        <span></span>
+                                    </span>
+                                </div>
+
+                                <div>
+                                    <button  class="ssm-button ssm-color-chooser-more" >
+                                        <span class="ssm-button-title">Expand</span>
+                                    </button>
+
+                                    <button class="ssm-button ssm-primary-button ssm-color-chooser-done" >
+                                        <span class="ssm-button-title">Apply</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="ssm-custom-color-chooser" data-isShow="false">
+                                <div>
+
+                                    <div class="ssm-color-chooser-base">
+
+                                        <div class="ssm-hue-pane">
+                                            <canvas class="ssm-hue-rect" width="200" height="16"></canvas>
+                                            <span class="ssm-hue-color-chooser-indicator"></span>
+                                        </div>
+
+                                        <div class="ssm-color-pane">
+                                            <canvas class="ssm-color-rect" width="200" height="200"></canvas>
+                                            <span class="ssm-color-chooser-indicator"></span>
+                                        </div>
+
+                                        <div class="ssm-custom-color-preview">
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="ssm-color-chooser-properties-pane">
+                                        <div class="ssm-color-chooser-title">
+                                            <label  class="ssm-label ssm-status-label-element">
+                                                <span></span>
+                                                <span>RGB</span>
+                                            </label>
+                                        </div>
+
+                                        <div class="ssm-color-chooser-properties">
+                                            <div>
+                                                <label  class="ssm-label ssm-status-label-element">
+                                                    <span></span>
+                                                    <span>Red</span>
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <div  class="ssm-number-input">
+                                                    <input type="text" style="display: inline-block;" data-min="0" data-max="255" data-step="1" value="255" />
+                                                    <label></label>
+                                                    <div>
+                                                        <a href="#!">&#9650;</a>
+                                                        <a href="#!">&#9660;</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <label  class="ssm-label ssm-status-label-element">
+                                                    <span></span>
+                                                    <span>Green</span>
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <div  class="ssm-number-input">
+                                                    <input type="text" style="display: inline-block;" data-min="0" data-max="255" data-step="1" value="0" />
+                                                    <label></label>
+                                                    <div>
+                                                        <a href="#!">&#9650;</a>
+                                                        <a href="#!">&#9660;</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <label  class="ssm-label ssm-status-label-element">
+                                                    <span></span>
+                                                    <span>Blue</span>
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <div  class="ssm-number-input">
+                                                    <input type="text" style="display: inline-block;" data-min="0" data-max="255" data-step="1" value="0" />
+                                                    <label></label>
+                                                    <div>
+                                                        <a href="#!">&#9650;</a>
+                                                        <a href="#!">&#9660;</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="ssm-color-chooser-title">
+                                            <label  class="ssm-label ssm-status-label-element">
+                                                <span></span>
+                                                <span>HSB</span>
+                                            </label>
+                                        </div>
+
+                                        <div class="ssm-color-chooser-properties">
+                                            <div>
+                                                <label  class="ssm-label ssm-status-label-element">
+                                                    <span></span>
+                                                    <span>Hue</span>
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <div  class="ssm-number-input">
+                                                    <input type="text" style="display: inline-block;" data-min="0" data-max="360" data-step="1" value="360" />
+                                                    <label>°</label>
+                                                    <div>
+                                                        <a href="#!">&#9650;</a>
+                                                        <a href="#!">&#9660;</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <label  class="ssm-label ssm-status-label-element">
+                                                    <span></span>
+                                                    <span>Saturation</span>
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <div  class="ssm-number-input">
+                                                    <input type="text" style="display: inline-block;" data-min="0" data-max="100" data-step="1" value="0" />
+                                                    <label>%</label>
+                                                    <div>
+                                                        <a href="#!">&#9650;</a>
+                                                        <a href="#!">&#9660;</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <label  class="ssm-label ssm-status-label-element">
+                                                    <span></span>
+                                                    <span>Brightness</span>
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <div  class="ssm-number-input">
+                                                    <input type="text" style="display: inline-block;" data-min="0" data-max="100" data-step="1" value="0" />
+                                                    <label>%</label>
+                                                    <div>
+                                                        <a href="#!">&#9650;</a>
+                                                        <a href="#!">&#9660;</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="ssm-color-chooser-properties ssm-color-chooser-hex">
+                                            <div>
+                                                <label  class="ssm-label ssm-status-label-element">
+                                                    <span></span>
+                                                    <span>Hex</span>
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <input  class="ssm-textbox" type="text" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Color Chooser End -->
+
+                <h2>Usage</h2>
+
+                <h3>Include styles and javascript modules on the header</h3>
+
+                <pre>
+                    <code>
+&lt;link type="text/css" rel="stylesheet" href="assets/css/typography.css" /&gt;
+&lt;link type="text/css" rel="stylesheet" href="assets/css/styles.css" /&gt;
+&lt;link type="text/css" rel="stylesheet" href="assets/css/theme-light.css" /&gt;
+
+&lt;script type="text/javascript" src="assets/js/CommonTools.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="assets/js/HtmlElements.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="assets/js/Drag.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="assets/js/Color.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="assets/js/NumberInput.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="assets/js/TextBox.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="assets/js/ColorChooserInput.js"&gt;&lt;/script&gt;
+                    </code>
+                </pre>
+
+                <h3>Add HTML for Color Chooser</h3>
+
+                <pre>
+                    <code>
+&lt;div id='my-color-chooser' class="ssm-color-chooser ssm-seal-control" data-isDisabled="false"&gt;
+    &lt;input type="color" value="#000000" /&gt;
+    &lt;svg
+        xmlns:dc="http://purl.org/dc/elements/1.1/"
+        xmlns:cc="http://creativecommons.org/ns#"
+        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns:svg="http://www.w3.org/2000/svg"
+        xmlns="http://www.w3.org/2000/svg"
+        version="1.1"
+        viewBox="0 0 5.5 1.25"
+        height="1.25em"
+        width="5.5em"&gt;
+        &lt;g
+            transform="translate(0,0)"&gt;
+            &lt;rect
+               ry="0.25"
+               y="0"
+               x="0"
+               height="1.25"
+               width="5.5"
+               fill="#000000"
+               stroke-width="0.1"
+               stroke="#b6b6b3" /&gt;
+       &lt;/g&gt;
+    &lt;/svg&gt;
+
+    &lt;div class="ssm-color-chooser-dialog" data-isShow="false"&gt;
+        &lt;div class="ssm-color-palette"&gt;
+            &lt;div&gt;
+                &lt;label  class="ssm-label ssm-status-label-element"&gt;
+                    &lt;span&gt;&lt;/span&gt;
+                    &lt;span&gt;Stanard Colors&lt;/span&gt;
+                &lt;/label&gt;
+
+                &lt;div&gt;
+                    &lt;span class="ssm-color-chooser-palette-item" style="background: #e78e89;" data-isChecked="false" data-color="#e78e89"&gt;
+                        &lt;span&gt;&lt;/span&gt;
+                    &lt;/span&gt;
+                    &lt;span class="ssm-color-chooser-palette-item" style="background: #f7a575;" data-isChecked="false" data-color="#f7a575"&gt;
+                        &lt;span&gt;&lt;/span&gt;
+                    &lt;/span&gt;
+                    &lt;span class="ssm-color-chooser-palette-item" style="background: #fde8ab;" data-isChecked="false" data-color="#fde8ab"&gt;
+                        &lt;span&gt;&lt;/span&gt;
+                    &lt;/span&gt;
+                    &lt;span class="ssm-color-chooser-palette-item" style="background: #ccdf7b;" data-isChecked="false" data-color="#ccdf7b"&gt;
+                        &lt;span&gt;&lt;/span&gt;
+                    &lt;/span&gt;
+                    &lt;span class="ssm-color-chooser-palette-item" style="background: #8ecaf2;" data-isChecked="false" data-color="#8ecaf2"&gt;
+                        &lt;span&gt;&lt;/span&gt;
+                    &lt;/span&gt;
+                    &lt;span class="ssm-color-chooser-palette-item" style="background: #d997d8;" data-isChecked="false" data-color="#d997d8"&gt;
+                        &lt;span&gt;&lt;/span&gt;
+                    &lt;/span&gt;
+                    &lt;span class="ssm-color-chooser-palette-item" style="background: #da4d45;" data-isChecked="false" data-color="#da4d45"&gt;
+                        &lt;span&gt;&lt;/span&gt;
+                    &lt;/span&gt;
+                    &lt;span class="ssm-color-chooser-palette-item" style="background: #f37329;" data-isChecked="false" data-color="#f37329"&gt;
+                        &lt;span&gt;&lt;/span&gt;
+                    &lt;/span&gt;
+                    &lt;span class="ssm-color-chooser-palette-item" style="background: #fbd25d;" data-isChecked="false" data-color="#fbd25d"&gt;
+                        &lt;span&gt;&lt;/span&gt;
+                    &lt;/span&gt;
+                    &lt;span class="ssm-color-chooser-palette-item" style="background: #b3cf3b;" data-isChecked="false" data-color="#b3cf3b"&gt;
+                        &lt;span&gt;&lt;/span&gt;
+                    &lt;/span&gt;
+                    &lt;span class="ssm-color-chooser-palette-item" style="background: #47a8e9;" data-isChecked="false" data-color="#47a8e9"&gt;
+                        &lt;span&gt;&lt;/span&gt;
+                    &lt;/span&gt;
+                    &lt;span class="ssm-color-chooser-palette-item" style="background: #c35cc2;" data-isChecked="false" data-color="#c35cc2"&gt;
+                        &lt;span&gt;&lt;/span&gt;
+                    &lt;/span&gt;
+                    &lt;span class="ssm-color-chooser-palette-item" style="background: #ad2a23;" data-isChecked="false" data-color="#ad2a23"&gt;
+                        &lt;span&gt;&lt;/span&gt;
+                    &lt;/span&gt;
+                    &lt;span class="ssm-color-chooser-palette-item" style="background: #c14e0b;" data-isChecked="false" data-color="#c14e0b"&gt;
+                        &lt;span&gt;&lt;/span&gt;
+                    &lt;/span&gt;
+                    &lt;span class="ssm-color-chooser-palette-item" style="background: #f9bc0f;" data-isChecked="false" data-color="#f9bc0f"&gt;
+                        &lt;span&gt;&lt;/span&gt;
+                    &lt;/span&gt;
+                    &lt;span class="ssm-color-chooser-palette-item" style="background: #809525;" data-isChecked="false" data-color="#809525"&gt;
+                        &lt;span&gt;&lt;/span&gt;
+                    &lt;/span&gt;
+                    &lt;span class="ssm-color-chooser-palette-item" style="background: #1881c8;" data-isChecked="false" data-color="#1881c8"&gt;
+                        &lt;span&gt;&lt;/span&gt;
+                    &lt;/span&gt;
+                    &lt;span class="ssm-color-chooser-palette-item" style="background: #983897;" data-isChecked="false" data-color="#983897"&gt;
+                        &lt;span&gt;&lt;/span&gt;
+                    &lt;/span&gt;
+                &lt;/div&gt;
+
+                &lt;div&gt;&lt;/div&gt;
+
+                &lt;div&gt;
+                    &lt;span class="ssm-color-chooser-palette-item" style="background: #000000;" data-isChecked="false" data-color="#000000"&gt;
+                        &lt;span&gt;&lt;/span&gt;
+                    &lt;/span&gt;
+                    &lt;span class="ssm-color-chooser-palette-item" style="background: #333333;" data-isChecked="false" data-color="#333333"&gt;
+                        &lt;span&gt;&lt;/span&gt;
+                    &lt;/span&gt;
+                    &lt;span class="ssm-color-chooser-palette-item" style="background: #666666;" data-isChecked="false" data-color="#666666"&gt;
+                        &lt;span&gt;&lt;/span&gt;
+                    &lt;/span&gt;
+                    &lt;span class="ssm-color-chooser-palette-item" style="background: #999999;" data-isChecked="false" data-color="#999999"&gt;
+                        &lt;span&gt;&lt;/span&gt;
+                    &lt;/span&gt;
+                    &lt;span class="ssm-color-chooser-palette-item" style="background: #cccccc;" data-isChecked="false" data-color="#cccccc"&gt;
+                        &lt;span&gt;&lt;/span&gt;
+                    &lt;/span&gt;
+                    &lt;span class="ssm-color-chooser-palette-item" style="background: #ffffff;" data-isChecked="false" data-color="#ffffff"&gt;
+                        &lt;span&gt;&lt;/span&gt;
+                    &lt;/span&gt;
+                &lt;/div&gt;
+
+                &lt;div&gt;
+                    &lt;button  class="ssm-button ssm-color-chooser-more" &gt;
+                        &lt;span class="ssm-button-title"&gt;Expand&lt;/span&gt;
+                    &lt;/button&gt;
+
+                    &lt;button class="ssm-button ssm-primary-button ssm-color-chooser-done" &gt;
+                        &lt;span class="ssm-button-title"&gt;Apply&lt;/span&gt;
+                    &lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class="ssm-custom-color-chooser" data-isShow="false"&gt;
+                &lt;div&gt;
+
+                    &lt;div class="ssm-color-chooser-base"&gt;
+
+                        &lt;div class="ssm-hue-pane"&gt;
+                            &lt;canvas class="ssm-hue-rect" width="200" height="16"&gt;&lt;/canvas&gt;
+                            &lt;span class="ssm-hue-color-chooser-indicator"&gt;&lt;/span&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class="ssm-color-pane"&gt;
+                            &lt;canvas class="ssm-color-rect" width="200" height="200"&gt;&lt;/canvas&gt;
+                            &lt;span class="ssm-color-chooser-indicator"&gt;&lt;/span&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class="ssm-custom-color-preview"&gt;
+
+                        &lt;/div&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;div class="ssm-color-chooser-properties-pane"&gt;
+                        &lt;div class="ssm-color-chooser-title"&gt;
+                            &lt;label  class="ssm-label ssm-status-label-element"&gt;
+                                &lt;span&gt;&lt;/span&gt;
+                                &lt;span&gt;RGB&lt;/span&gt;
+                            &lt;/label&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class="ssm-color-chooser-properties"&gt;
+                            &lt;div&gt;
+                                &lt;label  class="ssm-label ssm-status-label-element"&gt;
+                                    &lt;span&gt;&lt;/span&gt;
+                                    &lt;span&gt;Red&lt;/span&gt;
+                                &lt;/label&gt;
+                            &lt;/div&gt;
+                            &lt;div&gt;
+                                &lt;div  class="ssm-number-input"&gt;
+                                    &lt;input type="text" style="display: inline-block;" data-min="0" data-max="255" data-step="1" value="255" /&gt;
+                                    &lt;label&gt;&lt;/label&gt;
+                                    &lt;div&gt;
+                                        &lt;a href="#!"&gt;&amp;#9650;&lt;/a&gt;
+                                        &lt;a href="#!"&gt;&amp;#9660;&lt;/a&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+
+                            &lt;div&gt;
+                                &lt;label  class="ssm-label ssm-status-label-element"&gt;
+                                    &lt;span&gt;&lt;/span&gt;
+                                    &lt;span&gt;Green&lt;/span&gt;
+                                &lt;/label&gt;
+                            &lt;/div&gt;
+                            &lt;div&gt;
+                                &lt;div  class="ssm-number-input"&gt;
+                                    &lt;input type="text" style="display: inline-block;" data-min="0" data-max="255" data-step="1" value="0" /&gt;
+                                    &lt;label&gt;&lt;/label&gt;
+                                    &lt;div&gt;
+                                        &lt;a href="#!"&gt;&amp;#9650;&lt;/a&gt;
+                                        &lt;a href="#!"&gt;&amp;#9660;&lt;/a&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+
+                            &lt;div&gt;
+                                &lt;label  class="ssm-label ssm-status-label-element"&gt;
+                                    &lt;span&gt;&lt;/span&gt;
+                                    &lt;span&gt;Blue&lt;/span&gt;
+                                &lt;/label&gt;
+                            &lt;/div&gt;
+                            &lt;div&gt;
+                                &lt;div  class="ssm-number-input"&gt;
+                                    &lt;input type="text" style="display: inline-block;" data-min="0" data-max="255" data-step="1" value="0" /&gt;
+                                    &lt;label&gt;&lt;/label&gt;
+                                    &lt;div&gt;
+                                        &lt;a href="#!"&gt;&amp;#9650;&lt;/a&gt;
+                                        &lt;a href="#!"&gt;&amp;#9660;&lt;/a&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class="ssm-color-chooser-title"&gt;
+                            &lt;label  class="ssm-label ssm-status-label-element"&gt;
+                                &lt;span&gt;&lt;/span&gt;
+                                &lt;span&gt;HSB&lt;/span&gt;
+                            &lt;/label&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class="ssm-color-chooser-properties"&gt;
+                            &lt;div&gt;
+                                &lt;label  class="ssm-label ssm-status-label-element"&gt;
+                                    &lt;span&gt;&lt;/span&gt;
+                                    &lt;span&gt;Hue&lt;/span&gt;
+                                &lt;/label&gt;
+                            &lt;/div&gt;
+                            &lt;div&gt;
+                                &lt;div  class="ssm-number-input"&gt;
+                                    &lt;input type="text" style="display: inline-block;" data-min="0" data-max="360" data-step="1" value="360" /&gt;
+                                    &lt;label&gt;°&lt;/label&gt;
+                                    &lt;div&gt;
+                                        &lt;a href="#!"&gt;&amp;#9650;&lt;/a&gt;
+                                        &lt;a href="#!"&gt;&amp;#9660;&lt;/a&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+
+                            &lt;div&gt;
+                                &lt;label  class="ssm-label ssm-status-label-element"&gt;
+                                    &lt;span&gt;&lt;/span&gt;
+                                    &lt;span&gt;Saturation&lt;/span&gt;
+                                &lt;/label&gt;
+                            &lt;/div&gt;
+                            &lt;div&gt;
+                                &lt;div  class="ssm-number-input"&gt;
+                                    &lt;input type="text" style="display: inline-block;" data-min="0" data-max="100" data-step="1" value="0" /&gt;
+                                    &lt;label&gt;%&lt;/label&gt;
+                                    &lt;div&gt;
+                                        &lt;a href="#!"&gt;&amp;#9650;&lt;/a&gt;
+                                        &lt;a href="#!"&gt;&amp;#9660;&lt;/a&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+
+                            &lt;div&gt;
+                                &lt;label  class="ssm-label ssm-status-label-element"&gt;
+                                    &lt;span&gt;&lt;/span&gt;
+                                    &lt;span&gt;Brightness&lt;/span&gt;
+                                &lt;/label&gt;
+                            &lt;/div&gt;
+                            &lt;div&gt;
+                                &lt;div  class="ssm-number-input"&gt;
+                                    &lt;input type="text" style="display: inline-block;" data-min="0" data-max="100" data-step="1" value="0" /&gt;
+                                    &lt;label&gt;%&lt;/label&gt;
+                                    &lt;div&gt;
+                                        &lt;a href="#!"&gt;&amp;#9650;&lt;/a&gt;
+                                        &lt;a href="#!"&gt;&amp;#9660;&lt;/a&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class="ssm-color-chooser-properties ssm-color-chooser-hex"&gt;
+                            &lt;div&gt;
+                                &lt;label  class="ssm-label ssm-status-label-element"&gt;
+                                    &lt;span&gt;&lt;/span&gt;
+                                    &lt;span&gt;Hex&lt;/span&gt;
+                                &lt;/label&gt;
+                            &lt;/div&gt;
+                            &lt;div&gt;
+                                &lt;input  class="ssm-textbox" type="text" /&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                    </code>
+                </pre>
+
+                <h3>Add this javascript in the end to initialize</h3>
+
+                <pre>
+                    <code>
+&lt;script type="text/javascript"&gt;
+    let colorChooser = new ColorChooserInput(document.querySelector("#my-color-chooser"));
+
+    colorChooser.GetActionButton().addEventListener("click", event =&gt; {
+        console.log(color);
+    });
+&lt;/script&gt;
+                    </code>
+                </pre>
+            </section>
+        </main>
+        
+        <script type="text/javascript">
+            "use strict";
+
+            (function main() {
+
+                let colorChooser = new ColorChooserInput(document.querySelector("#my-color-chooser"));
+
+                colorChooser.GetActionButton().addEventListener("click", event => {
+                    let color       = colorChooser.GetValue();
+
+                    let h1Element   = document.querySelector("#example-text");
+                    h1Element.style.color = color;
+
+                    console.log(color);
+                });
+
+            }) ();
+        </script>
+    </body>
+</html>

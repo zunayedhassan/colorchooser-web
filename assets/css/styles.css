@@ -1,0 +1,390 @@
+/* 
+    Created on : Feb 9, 2019, 9:50:16 AM
+    Author     : Zunayed Hassan
+*/
+
+
+.ssm-button,
+.ssm-dropdown-menu-button {
+    cursor: default;
+    display: inline-block;
+    margin-left: 0.05em;
+    margin-right: 0.05em;
+    border-radius: 0.25em;
+    padding: 0.25em 0.5em 0.1em 0.5em;
+}
+
+.ssm-button-title {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.15em;
+    margin-left: 0.15em;
+    margin-top: -0.4em;
+}
+
+.ssm-label {
+    display: inline-block;
+}
+
+.ssm-label span {
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.ssm-label span:first-child {
+    margin-top: 0.8em;
+}
+
+.ssm-label span:first-child img {
+    width: 1.6em;
+}
+
+.ssm-seal-properties .ssm-label:first-child {
+    width: 8em;
+    text-align: left;
+}
+
+.ssm-seal-properties input {
+    width: 4em;
+    text-align: left;
+    border-radius: 0.25em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+
+.ssm-seal-properties input[type="number"] {
+    height: 1.5em;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+}
+
+.ssm-color-chooser {
+    display: inline-block;
+    text-align: center;
+    padding: 0.25em;
+    border-radius: 0.25em;
+}
+
+.ssm-color-chooser input {
+    display: none;
+}
+
+.ssm-color-chooser svg {
+    display: inline-block;
+    margin-bottom: -0.15em;
+}
+
+
+.ssm-color-chooser[data-isDisabled="true"] {
+    outline: none !important;
+    background: #ececec !important;
+    border-top: 1px solid #b6b6b3 !important;
+    border-left: 1px solid #b6b6b3 !important;
+    border-right: 1px solid #b6b6b3 !important;
+    border-bottom: 1px solid #91918c !important;
+    color: #808080 !important;
+    cursor: default !important;
+}
+
+.ssm-color-chooser[data-isDisabled="true"] svg rect {
+    fill: #ececec !important;
+}
+
+.ssm-number-input {
+    display: inline-block;
+    width: 8em;
+    font-size: 0.8em;
+    padding: 0;
+    border-radius: 0.25em;
+}
+
+.ssm-number-input > * {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+}
+
+.ssm-number-input > input[type="text"] {
+    width: 50%;
+    margin-left: 0em;
+    height: 1.8em;
+    padding: 0;
+    padding-left: 0.25em;
+    border: none;
+    outline: none;
+}
+
+.ssm-number-input > label {
+    width: 28%;
+    margin-left: -0.8em;
+    text-align: right;
+}
+
+.ssm-number-input > div > a {
+    display: block;
+    font-size: 0.7em;
+    width: 1.25em;
+    padding: 0.1em;
+    margin-left: 0.05em;
+    text-align: center;
+    text-decoration: none;
+    cursor: default;
+    transition: color 0.4s;
+}
+
+
+
+.ssm-textbox {
+    width: 10em !important;
+    height: 1.5em;
+    padding: 0.25em;
+    margin-left: -0.25em !important;
+    border-radius: 0.25em;
+}
+
+.ssm-color-chooser {
+    position: relative;
+}
+
+.ssm-color-chooser-dialog {
+    padding: 0.5em;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    border-radius: 0.25em;
+    z-index: 100000 !important;
+}
+
+.ssm-color-chooser-dialog input[type="text"] {
+    display: inline-block;
+}
+
+.ssm-color-chooser-dialog[data-isShow="false"] {
+    display: none;
+}
+
+.ssm-color-chooser-dialog[data-isShow="true"] {
+    display: inline-block;
+}
+
+
+.ssm-color-palette {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    grid-column-gap: 1em;
+}
+
+.ssm-color-palette > div:first-child {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto;
+    grid-row-gap: 0.7em;
+    margin-left: 1em;
+    align-content: center;
+}
+
+.ssm-color-palette > div:first-child > .ssm-label {
+    font-weight: bold;
+    text-align: left;
+}
+
+.ssm-color-palette > div:first-child > div:nth-child(2) {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    grid-template-rows: auto auto auto;
+    grid-row-gap: 0em;
+    grid-column-gap: 0.5em;
+    justify-content: center;
+}
+
+.ssm-color-palette > div:first-child > div:nth-child(4) {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    grid-template-rows: auto;
+    grid-row-gap: 0em;
+    grid-column-gap: 0.5em;
+    justify-content: center;
+}
+
+.ssm-color-palette > div:first-child > div:nth-child(5) {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto;
+    grid-column-gap: 0.25em;
+    justify-content: center;
+    margin-top: 0.5em;
+}
+
+.ssm-color-chooser-palette-item,
+.ssm-color-chooser-palette-item > span {
+    width: 2em;
+    height: 1.5em;
+}
+
+.ssm-color-chooser-palette-item {
+    display: inline-block;
+}
+
+.ssm-color-palette > div:first-child > div:nth-child(2) .ssm-color-chooser-palette-item:nth-child(1),
+.ssm-color-palette > div:first-child > div:nth-child(2) .ssm-color-chooser-palette-item:nth-child(2),
+.ssm-color-palette > div:first-child > div:nth-child(2) .ssm-color-chooser-palette-item:nth-child(3), 
+.ssm-color-palette > div:first-child > div:nth-child(2) .ssm-color-chooser-palette-item:nth-child(4),
+.ssm-color-palette > div:first-child > div:nth-child(2) .ssm-color-chooser-palette-item:nth-child(5),
+.ssm-color-palette > div:first-child > div:nth-child(2) .ssm-color-chooser-palette-item:nth-child(6) {
+    border-radius: 0.25em 0.25em 0 0;
+}
+
+.ssm-color-palette > div:first-child > div:nth-child(2) .ssm-color-chooser-palette-item:nth-child(13),
+.ssm-color-palette > div:first-child > div:nth-child(2) .ssm-color-chooser-palette-item:nth-child(14),
+.ssm-color-palette > div:first-child > div:nth-child(2) .ssm-color-chooser-palette-item:nth-child(15), 
+.ssm-color-palette > div:first-child > div:nth-child(2) .ssm-color-chooser-palette-item:nth-child(16),
+.ssm-color-palette > div:first-child > div:nth-child(2) .ssm-color-chooser-palette-item:nth-child(17),
+.ssm-color-palette > div:first-child > div:nth-child(2) .ssm-color-chooser-palette-item:nth-child(18) {
+    border-radius: 0 0 0.25em 0.25em;
+}
+
+
+.ssm-color-palette > div:first-child > div:nth-child(4) .ssm-color-chooser-palette-item {
+    border-radius: 0.25em;
+}
+
+
+
+.ssm-color-chooser-palette-item > span {
+    display: inline-block;
+}
+
+.ssm-custom-color-chooser[data-isShow="true"] {
+    display: block;
+}
+
+.ssm-custom-color-chooser[data-isShow="false"] {
+    display: none;
+}
+
+
+.ssm-custom-color-chooser > div {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    grid-column-gap: 1em;
+}
+
+
+.ssm-color-rect {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.ssm-hue-rect {
+    border-radius: 0.25em;
+}
+
+
+.ssm-hue-color-chooser-indicator {
+    display: inline-block;
+    position: absolute;
+    left: -2.5px;
+    top: 0;
+    width: 5px;
+    height: 16px;
+    border-radius: 0.25em;
+    cursor: pointer;
+}
+
+.ssm-color-chooser-indicator {
+    display: inline-block;
+    position: absolute;
+    left: -1.5px;
+    top: -1.5px;
+    width: 5px;
+    height: 5px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.ssm-hue-pane,
+.ssm-color-pane,
+.ssm-custom-color-preview {
+    position: relative;
+}
+
+.ssm-color-pane {
+    height: 200px;
+}
+
+.ssm-color-pane,
+.ssm-custom-color-preview {
+    margin-top: 0.5em;
+}
+
+.ssm-custom-color-preview {
+    height: 18px;
+    border-radius: 0.25em;
+    margin-top: 1em;
+}
+
+.ssm-color-chooser-title {
+    text-align: left;
+    margin-bottom: 0.25em;
+}
+
+.ssm-color-chooser-title:not(:first-child) {
+    margin-top: 0.5em;
+}
+
+.ssm-custom-color-chooser > div > div:last-child > div > label {
+    font-weight: bold;
+}
+
+.ssm-color-chooser-properties {
+    display: grid;
+    grid-template-columns: 5em auto;
+    grid-template-rows: auto auto auto;
+    grid-row-gap: 0.5em;
+    grid-column-gap: 1em;
+    justify-content: flex-start;
+}
+
+
+.ssm-color-chooser-properties .ssm-number-input {
+    position: relative;
+    width: 8.5em;
+}
+
+.ssm-color-chooser-properties .ssm-number-input input[type="text"] {
+    position: relative;
+}
+
+.ssm-color-chooser-properties .ssm-number-input div {
+    margin-right: 0em;
+}
+
+
+.ssm-color-chooser-properties .ssm-label {
+    display: block;
+    text-align: left;
+}
+
+.ssm-color-chooser-properties:last-child {
+    margin-top: 1em;
+    margin-bottom: -0.5em;
+}
+
+
+.ssm-color-chooser-properties .ssm-textbox {
+    display: inline-block;
+    max-width: 8em;
+    max-height: 1.2em;
+}
+
+.ssm-color-chooser-base {
+    padding-top: 1em;
+}
+
+.ssm-color-chooser-properties-pane {
+    margin-right: 1em;
+}
