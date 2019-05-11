@@ -638,6 +638,7 @@
     let colorChooser = new ColorChooserInput(document.querySelector("#my-color-chooser"));
 
     colorChooser.GetActionButton().addEventListener("click", event =&gt; {
+        let color = colorChooser.GetValue();
         console.log(color);
     });
 &lt;/script&gt;
